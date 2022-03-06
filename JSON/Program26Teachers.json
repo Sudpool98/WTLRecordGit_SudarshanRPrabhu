@@ -1,0 +1,30 @@
+{
+  "teachers": {
+    "teacher": [
+      {
+        "name": "Sudarshan",
+        "age": 23,
+        "subject": "C Programming",
+        "gender": "Male"
+      },
+      {
+        "name": "Bruce",
+        "age": 35,
+        "subject": "Science",
+        "gender": "Male"
+      },
+      {
+        "name": "Peter",
+        "age": 26,
+        "subject": "Maths",
+        "gender": "Male"
+      },
+      {
+        "name": "Selina",
+        "age": 31,
+        "subject": "Arts",
+        "gender": "Female"
+      }
+    ]
+  }
+}

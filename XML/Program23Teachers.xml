@@ -1,0 +1,27 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<teachers>
+ <teacher>
+   <name>Sudarshan</name>
+   <age>23</age>
+   <subject>C Programming</subject>
+   <gender>Male</gender>
+ </teacher>
+ <teacher>
+   <name>Bruce</name>
+   <age>35</age>
+   <subject>Science</subject>
+   <gender>Male</gender>
+ </teacher>
+ <teacher>
+   <name>Peter</name>
+   <age>26</age>
+   <subject>Maths</subject>
+   <gender>Male</gender>
+ </teacher>
+ <teacher>
+   <name>Selina</name>
+   <age>31</age>
+   <subject>Arts</subject>
+   <gender>Female</gender>
+ </teacher>
+</teachers>
