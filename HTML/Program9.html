@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {background-color:white;font-size: 150%;}
+            h1 {font-family: cambria; color:seagreen;}
+            h2 {font-family: consolas; color:dimgrey;}
+            a {font-family: times new roman; font-size: medium;}
+            a:link{color: green;background-color: transparent;text-decoration: none;}
+            a:visited{color: blue;background-color: transparent;text-decoration: none;}
+            a:active{color: red; background-color: transparent; text-decoration: none;}
+            a:hover{color: white;background-color: transparent;text-decoration: underline;}
+            form {background-color:whitesmoke; font-family: courier new;}
+            input {height: 25px; width: 300px; font-size:medium; font-family: courier new;}
+            footer {background-color:lightgreen; font-size: small; margin-top: 100px;}
+            button {height: 25px; width: 300px; font-size:medium; font-family: courier new;}
+            button:hover {background-color: seagreen; color: white;}
+
+            .loginf {
+                height: 375px; 
+                width: 500px;
+            }
+        </style>
+        <script>
+            function validateL()
+        {           
+            var flag = 0;
+            var userL = document.getElementById("stuidtxt");
+            var pwd = document.getElementById("pswrd");
+            document.getElementById("userLerror").style.display="none";
+            document.getElementById("pwdLerror").style.display="none";
+            if(userL.value.length == 0)
+            {
+                flag=1;
+                document.getElementById("userLerror").style.display="inline";
+            }
+            if(pwd.value.length == 0)
+            {
+                flag=1;
+                document.getElementById("pwdLerror").style.display="inline";
+            }
+            if(flag==0)
+            {
+                alert("Feature Not Available")
+            }
+        }
+        </script>
+    </head>
+    <body>
+        <h1>
+            <img src="logo.png">
+            Computer Science Department
+        </h1>
+        <h2>Student Login</h2>
+        <hr>
+        <form class="loginf" name="loginform">
+            <br>
+            <b>Login :</b><br><br>
+            <input type="text" name="stuidtxt" id="stuidtxt" placeholder="Student ID"><label id="userLerror" style="display: none; color: red; font-size: medium;">Cannot be Blank!</label><br><br>
+            <input type="password" name="pswrd" id="pswrd" placeholder="Password"><label id="pwdLerror" style="display: none; color: red;font-size: medium;">Cannot be Blank!</label><br><br>
+            <a href="#fpass" onclick="notAvail()">Forgot Password?</a><br><br>
+            <button type="button" name="login" id="login" onclick="validateL()">Login</button><br><br>
+            <a href="register.html">Not Yet Registered?</a>
+        </form>
+        <footer>
+            <hr>
+            <address>
+                Rajagiri College of Social Sciences (Autonomous),<br> 
+                Rajagiri P.O, Kalamassery, Cochin - 683 104,<br> 
+                Kerala, India.<br>
+                <a href="https://rajagiri.edu/">Click here</a> for Official Website.
+            </address>
+        </footer>
+    </body>
+</html>

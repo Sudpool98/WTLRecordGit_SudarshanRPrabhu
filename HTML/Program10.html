@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {background-color:white;font-size: 150%;}
+            h1 {font-family: cambria; color:seagreen;}
+            h2 {font-family: consolas; color:dimgrey;}
+            a {font-family: times new roman; font-size: medium;}
+            a:link{color: green;background-color: transparent;text-decoration: none;}
+            a:visited{color: blue;background-color: transparent;text-decoration: none;}
+            a:active{color: red; background-color: transparent; text-decoration: none;}
+            a:hover{color: white;background-color: transparent;text-decoration: underline;}
+            form {background-color:whitesmoke; font-family: courier new;}
+            input {height: 25px; width: 300px; font-size:medium; font-family: courier new;}
+            footer {background-color:lightgreen; font-size: small; margin-top: 100px;}
+            button {height: 25px; width: 300px; font-size:medium; font-family: courier new;}
+            button:hover {background-color: seagreen; color: white;}
+
+            .regisf {
+                font-size: medium;
+                height: 575px;
+            }
+            .radiob {
+                font-size:medium; 
+                font-family: courier new;
+                width:auto;
+            }
+        </style>
+        <script>
+            function validateR()
+            {
+                var flag = 0;
+                var userR = document.getElementById("stuidtxtR");
+                var pwdR = document.getElementById("pswrdR");
+                var cpwdR = document.getElementById("cpswrdR");
+                var fn = document.getElementById("fnametxt");
+                var ln = document.getElementById("lnametxt");
+                var em = document.getElementById("emailtxt");
+                var db = document.getElementById("dob");
+
+                document.getElementById("stuiderror").style.display="none";
+                document.getElementById("pwdRerror").style.display="none";
+                document.getElementById("cpwdRerror").style.display="none";
+                document.getElementById("fnameerror").style.display="none";
+                document.getElementById("lnameerror").style.display="none";
+                document.getElementById("emailerror").style.display="none";
+                document.getElementById("pwdmatch").style.display="none";
+                document.getElementById("invmail").style.display="none";
+                document.getElementById("doberror").style.display="none";
+
+                if(userR.value.length == 0)
+                {
+                    flag=1;
+                    document.getElementById("stuiderror").style.display="inline";
+                }
+                if(pwdR.value.length == 0)
+                {
+                    flag=1;
+                    document.getElementById("pwdRerror").style.display="inline";
+                }
+                if(cpwdR.value.length == 0)
+                {
+                    flag=1;
+                    document.getElementById("cpwdRerror").style.display="inline";
+                }
+                if(fn.value.length == 0)
+                {
+                    flag=1;
+                    document.getElementById("fnameerror").style.display="inline";
+                }
+                if(ln.value.length == 0)
+                {
+                    flag=1;
+                    document.getElementById("lnameerror").style.display="inline";
+                }
+                if(em.value.length == 0)
+                {
+                    flag=1;
+                    document.getElementById("emailerror").style.display="inline";
+                }
+                if(pwdR.value != cpwdR.value)
+                {
+                    flag=1;
+                    document.getElementById("pwdmatch").style.display="inline";
+                }
+                if (!em.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/))
+                {
+                    flag=1;
+                    document.getElementById("invmail").style.display="inline";
+                }
+                if(db.value.length == 0)
+                {
+                    flag=1;
+                    document.getElementById("doberror").style.display="inline";
+                }
+                if(flag==0)
+                {
+                    alert("Feature Not Available")
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>
+            <img src="logo.png">
+            Computer Science Department
+        </h1>
+        <h2>Registration</h2>
+        <hr>
+        <form class="regisf" name="regisform">
+            <br>
+            <a href="login.html">Already Registered?</a><br><br>
+            <input type="text" id="stuidtxtR" name="stuidtxtR" placeholder="Student ID"><label id="stuiderror" style="display: none; color: red;font-size: medium">Cannot be Blank!</label><br><br>
+            <input type="text" id="fnametxt" name="fnametxt" placeholder="First Name"><label id="fnameerror" style="display: none;color: red;font-size: medium">Cannot be Blank!</label><br><br>
+            <input type="text" id="lnametxt" name="lnametxt" placeholder="Last Name"><label id="lnameerror" style="display: none;color:red;font-size: medium">Cannot be Blank!</label><br><br>
+            <label for="dob">Date of Birth :</label><br><br>
+            <input type="date" id="dob"><label id="doberror" style="display: none; color: red;font-size: medium">Cannot be Blank!</label><br><br>
+            <label>Gender : </label>
+            <input type="radio" id="male" name="gender" value="male" class="radiob">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female" class="radiob">
+            <label for="female">Female</label>
+            <input type="radio" id="other" name="gender" value="other" class="radiob">
+            <label for="other">Other</label><label id="generror" style="display: none; color: red;font-size: medium">Cannot be Blank!</label><br><br>
+            <label for="course">Course : </label><label id="courserror" style="display: none; color: red;font-size: medium">Cannot be Blank!</label>
+            <select name="course" id="course">
+                <option disabled selected value>-</option>
+                <option value="mca">Master of Computer Applications(MCA)</option>
+                <option value="msccsda">MSc Computer Science(Data Analytics)</option>
+            </select><br><br>
+            <input type="text" id="emailtxt" name="emailtxt" placeholder="E-Mail"><label id="emailerror" style="display: none; color: red;font-size: medium;">Cannot be Blank!</label><label id="invmail" style="display: none; color: red;font-size: medium">Invalid Email!</label><br><br>
+            <input type="password" id="pswrdR" name="pswrdR" placeholder="Password"><label id="pwdRerror" style="display: none; color: red;font-size: medium">Cannot be Blank!</label><label id="pwdmatch" style="display: none; color: red;font-size: medium">Do Not Match!</label><br><br>
+            <input type="password" id="cpswrdR" name="cpswrdR" placeholder="Confirm Password"><label id="cpwdRerror" style="display: none; color: red;font-size: medium">Cannot be Blank!</label><br><br>
+            <button name="register" id="register" type="button" onclick="validateR()">Register</button>
+        </form>
+        <footer>
+            <hr>
+            <address>
+                Rajagiri College of Social Sciences (Autonomous),<br> 
+                Rajagiri P.O, Kalamassery, Cochin - 683 104,<br> 
+                Kerala, India.<br>
+                <a href="https://rajagiri.edu/">Click here</a> for Official Website.
+            </address>
+        </footer>
+    </body>
+</html>
